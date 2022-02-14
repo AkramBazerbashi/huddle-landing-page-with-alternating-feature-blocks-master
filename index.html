@@ -5,66 +5,652 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans">
   
   <title>Frontend Mentor | Huddle landing page with alternating feature blocks</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <script src="https://kit.fontawesome.com/0f1841bf60.js" crossorigin="anonymous"></script>
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    *{box-sizing: border-box;
+      
+    }
+    .background{
+      background-color: hsl(193, 100%, 96%);
+      position: absolute;
+      z-index: -1;
+    }
+    .back{
+      width: 1320px;
+      height: 620px;
+      margin-right: 20px;
+    }
+    .container{
+      width: 100%;
+      
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 50px;
+      padding: 50px;
+    }
+    .logo{
+      height: 40px;
+    }
+    .button1{
+      width: 160px;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      background-color: white;
+      box-shadow: 0px 2px 8px 0px grey;
+      font-size: 18px;
+      font-family: 'Open Sans';
+      font-weight: 700;
+    }
+    .button1:active{
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .up{
+      width: 95%;
+      padding: 50px;  
+      display: flex;
+      justify-content: space-between;
+    }
+    .left{
+      width: 40%;
+      position: relative;
+      top: 70px;
+      font-family: 'Poppins';
+    }
+    .left > p:first-child{
+      font-weight: 600;
+      font-size: 40px;
+    }
+    .left > p:last-child{
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+    }
+    
+    .button2{
+      width: 240px;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      background-color: hsl(322, 100%, 66%);
+      color: white;
+      box-shadow: 0px 2px 8px 0px grey;
+      font-size: 18px;
+      font-family: 'Open Sans';
+      font-weight: 700;
+    }
+    .button2:active{
+      background-color: hsla(322, 100%, 66%, 0.7);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .right{
+      width: 50%;
+    }
+    .img1{
+      width: 650px;
+      height: 400px;
+      
+    }
+    .first{
+      margin: 50px;
+      margin-top: 100px;
+      padding: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 0px 3px 0px grey;
+      border-radius: 8px;
+    }
+    .firstLeft{
+      width: 50%;
+    }
+    .firstRight img{
+      width: 400px;
+      height: 300px;
+    }
+    .firstLeft p:first-child{
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 30px;
+    }
+    .firstLeft p:last-child{
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+    }
+    .second{
+      margin: 50px;
+      margin-top: 100px;
+      padding: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 0px 3px 0px grey;
+      border-radius: 8px;
+    }
+    .secondRight{
+      width: 46%;
+    }
+    .secondLeft img{
+      width: 400px;
+      height: 300px;
+    }
+    .secondRight p:first-child{
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 30px;
+    }
+    .secondRight p:last-child{
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+    }
+    .third{
+      margin: 50px;
+      margin-top: 100px;
+      padding: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 0px 3px 0px grey;
+      border-radius: 8px;
+    }
+    .thirdLeft{
+      width: 44%;
+    }
+    .thirdRight img{
+      width: 400px;
+      height: 300px;
+    }
+    .thirdLeft p:first-child{
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 30px;
+    }
+    .thirdLeft p:last-child{
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+    }
+
+    .forth{
+      width: 50%;
+      margin: 50px auto;
+      margin-top: 100px;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 0px 3px 0px grey;
+      border-radius: 8px;
+      position: relative;
+      bottom: -140px;
+      background-color: white;
+    }
+    .forth p{
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 30px;
+    }
+    .button3{
+      width: 280px;
+      border: none;
+      border-radius: 30px;
+      padding: 20px;
+      background-color: hsl(322, 100%, 66%);
+      color: white;
+      box-shadow: 0px 2px 8px 0px grey;
+      font-size: 18px;
+      font-family: 'Open Sans';
+      font-weight: 700;
+    }
+    .button3:active{
+      background-color: hsla(322, 100%, 66%, 0.7);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer{
+      height: 450px;
+      width: 100%;
+      padding: 70px;
+      background-color: hsl(192, 100%, 9%);
+    }
+    .con{
+      display: flex;
+      justify-content: space-between;
+      height: 80%;
+      padding-bottom: 80px;
+
+    }
+    .footerLeft{
+      width: 30%;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .logo2{
+      color: white;
+      background-color: white;
+      margin-bottom: 20px;
+      width: 240px;
+      height: 40px;
+      display: block;
+      margin-top: 60px;
+
+    }
+    .location{
+      display: flex;
+      
+    }
+    .location img{
+      width: 13px;
+      height: 18px;
+      
+    }
+    .location p{
+      margin-left: 15px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+
+    }
+    .phone{
+      display: flex;
+      align-items: center;
+    }
+    .phone img{
+      width: 18px;
+      height: 18px;
+      
+    }
+    .phone p{
+      text-indent: 15px;
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .email{
+      display: flex;
+      align-items: center;
+
+    }
+    .email img{
+      width: 20px;
+      height: 16px;
+    }
+    .email p{
+      text-indent: 15px;
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .footerMiddleLeft{
+      
+      display: flex;
+      flex-direction: column;
+    }
+    .footerMiddleRight{
+      display: flex;
+      flex-direction: column;
+    }
+    .footerRight{
+      display: flex;
+    }
+    .about{
+      margin-top: 0px;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+    }
+    .about:active{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .career{
+      margin-top: 0px;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+
+    }
+    .career:active{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .copy{
+      align-self: flex-end;
+      position: relative;
+      bottom: -60px;
+    }
+    .foot{
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Open Sans';
+    }
+    .foot:active{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 375px) {
+      .back{
+        width: 100%;
+        height: 620px;
+      }
+      .header{
+        margin-bottom: 50px;
+        padding: 20px;
+      }
+      .logo{
+        width: 100px;
+        height: 20px;
+      }
+      .button1{
+      width: 100px;
+      border-radius: 20px;
+      padding: 5px;
+      font-size: 12px;
+      }
+      .up{
+        width: 100%;
+        padding: 20px;  
+        flex-direction: column;
+      }
+      .left{
+        width: 100%;
+        position: initial;
+        margin-bottom: 40px;
+      }
+      .left > p:first-child{
+        font-size: 20px;
+        text-align: center;
+        width: 70%;
+        margin: auto;
+      }
+      .left > p:nth-child(2){
+        font-size: 12 px;
+        text-align: center;
+        width: 80%;
+        margin: 20px auto;
+      }
+    
+      .button2{
+        width: 200px;
+        border-radius: 20px;
+        padding: 5px;
+        font-size: 12px;
+        margin: auto;
+        margin-left: 60px;
+      }
+      .right{
+        width: 100%;
+      }
+      .img1{
+        width: 100%;
+        height: 300px;
+      }
+      .first{
+        margin: 20px;
+        margin-top: 50px;
+        padding: 20px;
+        flex-direction: column;
+      }
+      .firstLeft{
+        width: 80%;
+        order: 2;
+      }
+      .firstRight img{
+        width: 100%;
+        height: 200px;
+      }
+      .firstLeft p:first-child{
+        font-size: 18px;
+        text-align: center;
+      }
+      .firstLeft p:last-child{
+        font-size: 12px;
+        text-align: center;
+      }
+      .second{
+        margin: 20px;
+        margin-top: 50px;
+        padding: 20px;
+        flex-direction: column;
+      }
+      .secondRight{
+        width: 80%;
+      }
+      .secondLeft img{
+        width: 100%;
+        height: 200px;
+      }
+      .secondRight p:first-child{
+        font-size: 18px;
+        text-align: center;
+      }
+      .secondRight p:last-child{
+        font-size: 12px;
+        text-align: center;
+      }
+      .third{
+        margin: 20px;
+        margin-top: 50px;
+        padding: 20px;
+        flex-direction: column;
+      }
+      .thirdLeft{
+        width: 75%;
+        order: 2;
+      }
+      .thirdRight img{
+        width: 100%;
+        height: 200px;
+      }
+      .thirdLeft p:first-child{
+        font-size: 18px;
+        text-align: center;
+      }
+      .thirdLeft p:last-child{
+        text-align: center;
+        font-size: 12px;
+      }
+      .forth{
+        width: 90%;
+        margin: 20px auto;
+        margin-top: 50px;
+        padding: 20px;
+        position: relative;
+        bottom: -55px;
+        background-color: white;
+      }
+      .forth p{
+        font-size: 18px;
+      }
+      .button3{
+        width: 200px;
+        border-radius: 20px;
+        padding: 5px;
+        font-size: 12px;
+      }
+      .footer{
+        height: 700px;
+        padding: 20px;
+      }
+      .con{
+        flex-direction: column;
+        height: 70%;
+        padding-bottom: 30px;
+
+      }
+      .footerLeft{
+        width: 100%;
+        height: 140px;
+      }
+      .logo2{
+        margin-bottom: 50px;
+        width: 240px;
+        height: 40px;
+        display: block;
+        margin-top: 30px;
+
+      }
+      .location p{
+        margin-left: 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+      .phone p{
+        text-indent: 15px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      .email p{
+        text-indent: 15px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      .about{
+        margin-top: 0px;
+        font-size: 12px;
+      }
+      .career{
+        margin-top: 0px;
+        font-size: 12px;
+      }
+      .copy{
+        align-self: flex-end;
+        position: relative;
+        bottom: -60px;
+        font-size: 12px;
+        text-align: center;
+        margin: auto;
+      }
+      .foot{
+        font-size: 12px;
+      }
+    }
   </style>
+  
 </head>
 <body>
 
-  Try It Free
+  <div class="background">
+    <img class="back" src="images/bg-hero-desktop.svg">
+  </div>
+  <div class="container">
+    <div>
+      <div class="header">
+        <img class="logo" src="images/logo.svg">
+        <button class="button1">Try It Free</button>
+      </div>
+    </div>
+    <div class="up">
+      <div class="left">
+        <p>Build The Community Your Fans Will Love</p>
+        <p>Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
+          Create connections with your users as you engage in genuine discussion. </p>
+        <button class="button2">Get Started For Free</button>
+      </div>
+      <div class="right">
+        <img class="img1" src="images/illustration-mockups.svg">
+      </div>
+    </div>
+    <div class="first">
+      <div class="firstLeft">
+        <p>Grow Together</p>
+        <p>Generate meaningful discussions with your audience and build a strong, loyal community. 
+          Think of the insightful conversations you miss out on with a feedback form. </p>
+      </div>
+      <div class="firstRight">
+        <img src="images/illustration-grow-together.svg">
+      </div>
+    </div>
+    <div class="second">
+      <div class="secondLeft">
+        <img src="images/illustration-flowing-conversation.svg">
+      </div>
+      <div class="secondRight">
+        <p>Flowing Conversations</p>
+        <p>You wouldn't paginate a conversation in real life, so why do it online? Our threads 
+          have just-in-time loading for a more natural flow.</p>
+      </div>
+    </div>
+    <div class="third">
+      <div class="thirdLeft">
+        <p>Your Users</p>
+        <p>It takes no time at all to integrate Huddle with your app's authentication solution. 
+          This means, once signed in to your app, your users can start chatting immediately.</p>
+      </div>
+      <div class="thirdRight">
+        <img src="images/illustration-your-users.svg">
+      </div>
+    </div>
+    <div class="forth">
+        <p>Ready To Build Your Community?</p>
+        <button class="button3" >Get Started For Free</button>
+    </div>
+    <div class="footer">
+      <img class="logo2" src="images/logo.svg">
+      <div class="con">
+        <div class="footerLeft">
+          <div class="location">
+            <img src="images/icon-location.svg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+              incididunt ut labore et dolore magna aliqua</p>
+          </div>
+          <div class="phone">
+            <img src="images/icon-phone.svg">
+            <p>+1-543-123-4567</p>
+          </div>
+          <div class="email">
+            <img src="images/icon-email.svg">
+            <p>example@huddle.com</p>
+          </div>
+        </div>
+        <div class="footerMiddleLeft">
+          <p style="color: white;" class="about">About Us</p>
+          <p style="color: white;" class="foot">What We Do</p>
+          <p style="color: white;" class="foot">FAQ</p>
+        </div>
+        <div class="footerMiddleRight">
+          <p style="color: white;" class="career">Career</p>
+          <p style="color: white;" class="foot">Blog</p>
+          <p style="color: white;" class="foot">Contact Us</p>
+        </div>
+        <div class="footerRight">
+          <p style="color: white;" class="copy">&copy; Copyright 2018 Huddle. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    
 
-  Build The Community Your Fans Will Love
+  </div>
 
-  Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
-  Create connections with your users as you engage in genuine discussion. 
+  
 
-  Get Started For Free
+  
 
-  Grow Together
-
-  Generate meaningful discussions with your audience and build a strong, loyal community. 
-  Think of the insightful conversations you miss out on with a feedback form. 
-
-  Flowing Conversations
-
-  You wouldn't paginate a conversation in real life, so why do it online? Our threads 
-  have just-in-time loading for a more natural flow.
-
-  Your Users
-
-  It takes no time at all to integrate Huddle with your app's authentication solution. 
-  This means, once signed in to your app, your users can start chatting immediately.
-
-  Ready To Build Your Community?
-
-  Get Started For Free
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-  incididunt ut labore et dolore magna aliqua
-
-  +1-543-123-4567
-  example@huddle.com
-
-  About Us
-  What We Do
-  FAQ
-
-  Career
-  Blog
-  Contact Us
-
-  &copy; Copyright 2018 Huddle. All rights reserved.
-
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
 </body>
+
 </html>
